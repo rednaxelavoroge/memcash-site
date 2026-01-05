@@ -1,0 +1,26 @@
+.memcash-widget *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif;}
+.memcash-widget{max-width:520px;margin:20px auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.15);background:#f8fbf9;}
+.memcash-header{display:flex;align-items:center;justify-content:space-between;padding:16px;background:#f0f7f4;border-bottom:1px solid #b8d4c9;flex-wrap:wrap;gap:10px;}
+.memcash-logo img{height:50px;}
+.memcash-controls{display:flex;gap:8px;flex-wrap:wrap;}
+.memcash-controls select{padding:8px 12px;border:2px solid #b8d4c9;border-radius:12px;background:#fff;font-size:14px;}
+.memcash-sign-up{background:#54A246;color:#fff;padding:8px 16px;border-radius:12px;font-weight:bold;cursor:pointer;}
+.memcash-content{padding:20px;display:flex;flex-direction:column;gap:20px;}
+.memcash-panel{background:#fff;border:1px solid #b8d4c9;border-radius:20px;padding:20px;}
+.memcash-panel h3{font-size:18px;color:#003725;margin-bottom:16px;font-weight:bold;}
+.memcash-input{margin-bottom:16px;}
+.memcash-input label{display:block;margin-bottom:6px;color:#556b5f;font-weight:600;}
+.memcash-input input{width:100%;padding:14px;border:2px solid #b8d4c9;border-radius:12px;font-size:18px;background:#fff;}
+.memcash-calc-input input{font-size:20px;text-align:right;}
+.memcash-mode{display:flex;gap:10px;margin:16px 0;}
+.memcash-chip{flex:1;padding:12px;border:2px solid #54A246;border-radius:50px;font-weight:bold;cursor:pointer;background:transparent;color:#54A246;text-align:center;}
+.memcash-chip.memcash-active{background:#54A246;color:#fff;}
+.memcash-btn{width:100%;padding:16px;background:#54A246;color:#fff;border:none;border-radius:14px;font-weight:bold;font-size:17px;cursor:pointer;}
+.memcash-result{padding:16px;background:#f5fbf8;border:2px dashed #99D162;border-radius:14px;font-size:16px;line-height:1.6;margin-top:16px;}
+.memcash-ring{width:70px;height:70px;border-radius:50%;background:conic-gradient(#54A246 calc(var(--pct)*1%), #e0ece6 0);display:grid;place-items:center;margin:0 auto 12px;}
+.memcash-ring span{font-size:24px;font-weight:900;color:#003725;}
+.memcash-dots{display:flex;gap:8px;justify-content:center;margin:10px 0;}
+.memcash-dot{width:12px;height:12px;border-radius:50%;background:#d0e0d9;}
+.memcash-dot.memcash-active{background:#54A246;}
+.memcash-tx-info{font-size:14px;color:#556b5f;margin-top:8px;text-align:center;}
+.memcash-footer{text-align:center;padding:16px;background:#f0f7f4;color:#556b5f;font-size:12px;}

@@ -1,0 +1,412 @@
+const MEMCASH_TRANSLATIONS = {
+  en: {
+    title: "Microloan calculator",
+    purchase: "Purchase amount",
+    available: "Available on card",
+    tx: "Transactions last 90 days",
+    exact: "Exact",
+    max: "Maximum",
+    calcBtn: "Calculate",
+    noteRound: "MEM may round up to avoid zeroing your card balance.",
+    loyaltyStatus: "Loyalty Status",
+    nextLevel: "Next level in {n} tx",
+    bonusProgram: "Bonus Program",
+    points: "Points",
+    dailyBonus: "+10 points (daily)",
+    signUp: "Sign Up",
+    createAccount: "Create Account",
+    manageSources: "Manage Sources",
+    phone: "Phone Number *",
+    primaryCard: "Primary Debit Card *",
+    secondaryCard: "Secondary Card (Optional)",
+    wallet: "E-Wallet / USDT (Optional)",
+    addMethod: "+ Add another card/wallet",
+    editMethod: "Add / Edit methods",
+    completeReg: "Complete Registration",
+    saveChanges: "Save Changes",
+    mandatory: "* Mandatory fields",
+    home: "Home",
+    sources: "My sources",
+    self: "Self-lending",
+    rosca: "ROSCA",
+    loyalty: "Loyalty",
+    loyaltyProgram: "Loyalty Program",
+    coverageNote: "Coverage applies to deficits up to 50 USD/EUR.",
+    level: "Level",
+    coverage: "Coverage %",
+    status: "Status",
+    basic: "Basic",
+    extended: "Extended",
+    roscaAccess: "ROSCA Access",
+    fastApproval: "Fast Approval",
+    premium: "Premium",
+    currentLevel: "Current Level",
+    deficit: "Deficit:",
+    topup: "MEM top-up:",
+    remaining: "Remaining:"
+  },
+  hy: {
+    title: "Միկրովարկի հաշվիչ",
+    purchase: "Գնման գումար",
+    available: "Քարտի վրա առկա է",
+    tx: "Վերջին 90 օրվա գործարքներ",
+    exact: "Ճիշտ",
+    max: "Առավելագույն",
+    calcBtn: "Հաշվել",
+    noteRound: "MEM-ը կարող է կլորացնել՝ քարտի մնացորդը զրո չդարձնելու համար:",
+    loyaltyStatus: "Հավատարմության կարգավիճակ",
+    nextLevel: "Հաջորդ մակարդակը {n} գործարք հետո",
+    bonusProgram: "Բոնուսային ծրագիր",
+    points: "Միավորներ",
+    dailyBonus: "+10 միավոր (ամեն օր)",
+    signUp: "Գրանցվել",
+    createAccount: "Ստեղծել հաշիվ",
+    manageSources: "Կառավարել աղբյուրները",
+    phone: "Հեռախոսահամար *",
+    primaryCard: "Հիմնական դեբետային քարտ *",
+    secondaryCard: "Երկրորդային քարտ (ընտրովի)",
+    wallet: "Էլեկտրոնային դրամապանակ / USDT (ընտրովի)",
+    addMethod: "+ Ավելացնել ևս մեկ քարտ/դրամապանակ",
+    editMethod: "Ավելացնել / խմբագրել մեթոդները",
+    completeReg: "Ավարտել գրանցումը",
+    saveChanges: "Պահպանել փոփոխությունները",
+    mandatory: "* Պարտադիր դաշտեր",
+    home: "Գլխավոր",
+    sources: "Իմ աղբյուրները",
+    self: "Ինքնավարկ",
+    rosca: "ROSCA",
+    loyalty: "Հավատարմություն",
+    loyaltyProgram: "Հավատարմության ծրագիր",
+    coverageNote: "Ծածկույթը վերաբերում է մինչև 50 USD/EUR պակասուրդներին:",
+    level: "Մակարդակ",
+    coverage: "Ծածկույթ %",
+    status: "Կարգավիճակ",
+    basic: "Բազային",
+    extended: "Ընդլայնված",
+    roscaAccess: "ROSCA մուտք",
+    fastApproval: "Արագ հաստատում",
+    premium: "Պրեմիում",
+    currentLevel: "Ընթացիկ մակարդակ",
+    deficit: "Պակասուրդ՝",
+    topup: "MEM լիցքավորում՝",
+    remaining: "Մնացորդ՝"
+  },
+  ru: {
+    title: "Калькулятор микрокредита",
+    purchase: "Сумма покупки",
+    available: "Доступно на карте",
+    tx: "Транзакций за 90 дней",
+    exact: "Точно",
+    max: "Максимум",
+    calcBtn: "Рассчитать",
+    noteRound: "MEM может округлять в большую сторону, чтобы не обнулять баланс карты.",
+    loyaltyStatus: "Статус лояльности",
+    nextLevel: "Следующий уровень через {n} операций",
+    bonusProgram: "Бонусная программа",
+    points: "Баллы",
+    dailyBonus: "+10 баллов (ежедневно)",
+    signUp: "Регистрация",
+    createAccount: "Создать аккаунт",
+    manageSources: "Управление источниками",
+    phone: "Номер телефона *",
+    primaryCard: "Основная дебетовая карта *",
+    secondaryCard: "Дополнительная карта (по желанию)",
+    wallet: "Эл. кошелёк / USDT (по желанию)",
+    addMethod: "+ Добавить ещё карту/кошелёк",
+    editMethod: "Добавить / Редактировать способы",
+    completeReg: "Завершить регистрацию",
+    saveChanges: "Сохранить изменения",
+    mandatory: "* Обязательные поля",
+    home: "Главная",
+    sources: "Мои источники",
+    self: "Самокредитование",
+    rosca: "ROSCA",
+    loyalty: "Лояльность",
+    loyaltyProgram: "Программа лояльности",
+    coverageNote: "Покрытие действует на дефицит до 50 USD/EUR.",
+    level: "Уровень",
+    coverage: "Покрытие %",
+    status: "Статус",
+    basic: "Базовый",
+    extended: "Расширенный",
+    roscaAccess: "Доступ к ROSCA",
+    fastApproval: "Быстрое одобрение",
+    premium: "Премиум",
+    currentLevel: "Текущий уровень",
+    deficit: "Дефицит:",
+    topup: "Пополнение от MEM:",
+    remaining: "Остаток:"
+  },
+  ro: {
+    title: "Calculator microîmprumut",
+    purchase: "Sumă cumpărătură",
+    available: "Disponibil pe card",
+    tx: "Tranzacții ultimele 90 zile",
+    exact: "Exact",
+    max: "Maxim",
+    calcBtn: "Calculează",
+    noteRound: "MEM poate rotunji în sus pentru a nu goli soldul cardului.",
+    loyaltyStatus: "Statut loialitate",
+    nextLevel: "Următorul nivel în {n} tx",
+    bonusProgram: "Program bonus",
+    points: "Puncte",
+    dailyBonus: "+10 puncte (zilnic)",
+    signUp: "Înregistrare",
+    createAccount: "Creare cont",
+    manageSources: "Gestionare surse",
+    phone: "Număr de telefon *",
+    primaryCard: "Card debit principal *",
+    secondaryCard: "Card secundar (opțional)",
+    wallet: "Portofel electronic / USDT (opțional)",
+    addMethod: "+ Adaugă altă card/portofel",
+    editMethod: "Adaugă / Editează metode",
+    completeReg: "Finalizează înregistrarea",
+    saveChanges: "Salvează modificările",
+    mandatory: "* Câmpuri obligatorii",
+    home: "Acasă",
+    sources: "Sursele mele",
+    self: "Auto-împrumut",
+    rosca: "ROSCA",
+    loyalty: "Loialitate",
+    loyaltyProgram: "Program de loialitate",
+    coverageNote: "Acoperirea se aplică deficitelor până la 50 USD/EUR.",
+    level: "Nivel",
+    coverage: "Acoperire %",
+    status: "Statut",
+    basic: "De bază",
+    extended: "Extins",
+    roscaAccess: "Acces ROSCA",
+    fastApproval: "Aprobare rapidă",
+    premium: "Premium",
+    currentLevel: "Nivel curent",
+    deficit: "Deficit:",
+    topup: "Completare MEM:",
+    remaining: "Rămas:"
+  },
+  pt: {
+    title: "Calculadora de microcrédito",
+    purchase: "Valor da compra",
+    available: "Disponível no cartão",
+    tx: "Transações últimos 90 dias",
+    exact: "Exato",
+    max: "Máximo",
+    calcBtn: "Calcular",
+    noteRound: "O MEM pode arredondar para cima para evitar zerar o saldo do cartão.",
+    loyaltyStatus: "Status de fidelidade",
+    nextLevel: "Próximo nível em {n} transações",
+    bonusProgram: "Programa de bônus",
+    points: "Pontos",
+    dailyBonus: "+10 pontos (diário)",
+    signUp: "Cadastre-se",
+    createAccount: "Criar conta",
+    manageSources: "Gerenciar fontes",
+    phone: "Telefone *",
+    primaryCard: "Cartão de débito principal *",
+    secondaryCard: "Cartão secundário (opcional)",
+    wallet: "Carteira eletrônica / USDT (opcional)",
+    addMethod: "+ Adicionar outro cartão/carteira",
+    editMethod: "Adicionar / Editar métodos",
+    completeReg: "Concluir cadastro",
+    saveChanges: "Salvar alterações",
+    mandatory: "* Campos obrigatórios",
+    home: "Início",
+    sources: "Minhas fontes",
+    self: "Autoempréstimo",
+    rosca: "ROSCA",
+    loyalty: "Fidelidade",
+    loyaltyProgram: "Programa de fidelidade",
+    coverageNote: "A cobertura aplica-se a déficits até 50 USD/EUR.",
+    level: "Nível",
+    coverage: "Cobertura %",
+    status: "Status",
+    basic: "Básico",
+    extended: "Estendido",
+    roscaAccess: "Acesso ROSCA",
+    fastApproval: "Aprovação rápida",
+    premium: "Premium",
+    currentLevel: "Nível atual",
+    deficit: "Déficit:",
+    topup: "Recarga MEM:",
+    remaining: "Restante:"
+  },
+  hi: {
+    title: "माइक्रोलोन कैलकुलेटर",
+    purchase: "खरीद राशि",
+    available: "कार्ड पर उपलब्ध",
+    tx: "पिछले 90 दिनों में लेनदेन",
+    exact: "सटीक",
+    max: "अधिकतम",
+    calcBtn: "गणना करें",
+    noteRound: "MEM कार्ड बैलेंस शून्य न करने के लिए ऊपर की ओर गोल कर सकता है।",
+    loyaltyStatus: "वफादारी स्थिति",
+    nextLevel: "अगला स्तर {n} लेनदेन में",
+    bonusProgram: "बोनस प्रोग्राम",
+    points: "अंक",
+    dailyBonus: "+10 अंक (दैनिक)",
+    signUp: "साइन अप",
+    createAccount: "खाता बनाएं",
+    manageSources: "स्रोत प्रबंधित करें",
+    phone: "फोन नंबर *",
+    primaryCard: "प्राथमिक डेबिट कार्ड *",
+    secondaryCard: "द्वितीयक कार्ड (वैकल्पिक)",
+    wallet: "ई-वॉलेट / USDT (वैकल्पिक)",
+    addMethod: "+ एक और कार्ड/वॉलेट जोड़ें",
+    editMethod: "जोड़ें / संपादित करें विधियाँ",
+    completeReg: "पंजीकरण पूरा करें",
+    saveChanges: "परिवर्तन सहेजें",
+    mandatory: "* अनिवार्य फ़ील्ड",
+    home: "होम",
+    sources: "मेरे स्रोत",
+    self: "सेल्फ-लेंडिंग",
+    rosca: "ROSCA",
+    loyalty: "वफादारी",
+    loyaltyProgram: "वफादारी कार्यक्रम",
+    coverageNote: "कवरेज 50 USD/EUR तक के घाटे पर लागू होता है।",
+    level: "लेवल",
+    coverage: "कवरेज %",
+    status: "स्थिति",
+    basic: "बेसिक",
+    extended: "विस्तारित",
+    roscaAccess: "ROSCA एक्सेस",
+    fastApproval: "तेज़ अप्रूवल",
+    premium: "प्रीमियम",
+    currentLevel: "वर्तमान लेवल",
+    deficit: "घाटा:",
+    topup: "MEM टॉप-अप:",
+    remaining: "शेष:"
+  }
+};
+
+function memcashT(lang, key, vars = {}) {
+  const dict = MEMCASH_TRANSLATIONS[lang] || MEMCASH_TRANSLATIONS.en;
+  let text = dict[key] || key;
+  Object.keys(vars).forEach(k => {
+    text = text.replace(`{${k}}`, vars[k]);
+  });
+  return text;
+}
+
+jQuery(document).ready(function($){
+
+  function applyTranslations($widget, lang) {
+    $widget.find('.memcash-title-text')
+      .text(memcashT(lang, 'title'));
+    $widget.find('.memcash-label-purchase')
+      .text(memcashT(lang, 'purchase'));
+    $widget.find('.memcash-label-available')
+      .text(memcashT(lang, 'available'));
+    $widget.find('.memcash-label-tx')
+      .text(memcashT(lang, 'tx'));
+    $widget.find('.memcash-chip[data-mode="exact"]')
+      .text(memcashT(lang, 'exact'));
+    $widget.find('.memcash-chip[data-mode="max"]')
+      .text(memcashT(lang, 'max'));
+    $widget.find('.memcash-calcBtn')
+      .text(memcashT(lang, 'calcBtn'));
+    $widget.find('.memcash-loyalty-title')
+      .text(memcashT(lang, 'loyaltyStatus'));
+    $widget.find('.memcash-note-round')
+      .text(memcashT(lang, 'noteRound'));
+  }
+
+  function renderResult($widget, data, lang) {
+    const cur = data.currency;
+
+    $widget.find('.memcash-resultBox').html(
+      memcashT(lang, 'deficit')   + ' <strong>' + data.deficit.toFixed(2) + ' ' + cur + '</strong><br>' +
+      memcashT(lang, 'topup')     + ' <strong>' + data.loan.toFixed(2)    + ' ' + cur + '</strong><br>' +
+      memcashT(lang, 'remaining') + ' <strong>' + data.remain.toFixed(2)  + ' ' + cur + '</strong>'
+    );
+
+    $widget.find('.memcash-level').text(data.level);
+    $widget.find('.memcash-level2').text(data.level);
+    $widget.find('.memcash-ring')[0].style.setProperty('--pct', data.level * 20);
+
+    const $dots = $widget.find('.memcash-dotsBox');
+    $dots.empty();
+    for (let i = 1; i <= data.max_level; i++) {
+      const $d = $('<div>').addClass('memcash-dot');
+      if (i <= data.level) {
+        $d.addClass('memcash-active');
+      }
+      $dots.append($d);
+    }
+
+    // здесь можно завести отдельный ключ, если нужно, пока просто tx:
+    $widget.find('.memcash-txInfo').text(
+      data.tx + ' ' + memcashT(lang, 'tx')
+    );
+
+    if (data.level < data.max_level) {
+      $widget.find('.memcash-nextInfo').text(
+        memcashT(lang, 'nextLevel', { n: data.next_tx })
+      );
+    } else {
+      $widget.find('.memcash-nextInfo').text(
+        memcashT(lang, 'currentLevel')
+      );
+    }
+  }
+
+  function sendCalc($widget, lang) {
+    const purchase  = parseFloat($widget.find('.memcash-purchase').val())  || 0;
+    const available = parseFloat($widget.find('.memcash-available').val()) || 0;
+    const tx        = parseInt($widget.find('.memcash-tx').val(), 10)      || 0;
+    const currency  = $widget.find('.memcash-currencySel').val() || 'EUR';
+    const mode      = $widget.find('.memcash-chip.memcash-active').data('mode') || 'exact';
+
+    $.ajax({
+      url: MEMCASH_CALC.ajax_url,
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        action:   'memcash_calc',
+        nonce:    MEMCASH_CALC.nonce,
+        purchase: purchase,
+        available: available,
+        tx:       tx,
+        mode:     mode,
+        currency: currency
+      },
+      success: function(response) {
+        if (response.success) {
+          renderResult($widget, response.data, lang);
+          $widget.find('.memcash-cur').text(currency);
+        }
+      }
+    });
+  }
+
+  $('.memcash-widget').each(function(){
+    const $widget = $(this);
+    let currentLang = $widget.find('.memcash-langSel').val() || 'en';
+
+    applyTranslations($widget, currentLang);
+    sendCalc($widget, currentLang);
+
+    $widget.on('click', '.memcash-calcBtn', function(){
+      sendCalc($widget, currentLang);
+    });
+
+    $widget.on('input', '.memcash-tx', function(){
+      sendCalc($widget, currentLang);
+    });
+
+    $widget.on('click', '.memcash-chip', function(){
+      $widget.find('.memcash-chip').removeClass('memcash-active');
+      $(this).addClass('memcash-active');
+      sendCalc($widget, currentLang);
+    });
+
+    $widget.on('change', '.memcash-currencySel', function(){
+      sendCalc($widget, currentLang);
+    });
+
+    $widget.on('change', '.memcash-langSel', function(){
+      currentLang = $(this).val() || 'en';
+      applyTranslations($widget, currentLang);
+      sendCalc($widget, currentLang);
+    });
+  });
+
+});
